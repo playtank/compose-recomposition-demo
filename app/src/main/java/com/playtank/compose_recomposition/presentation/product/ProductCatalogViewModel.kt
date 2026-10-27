@@ -7,18 +7,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 /**
- * ViewModel for [ProductCatalogScreen].
- *
- * Owns all business logic and exposes a single [StateFlow] of [ProductCatalogUiState].
- * UI events are sent via [processIntent] following the MVI pattern.
- *
- * The [ProductCatalogUiState.clickCounter] and [ProductCatalogUiState.products] are
- * deliberately co-located in the same state object so the demo can show:
- *
- * - **Unoptimized path** — composables that receive the whole state object will
- *   recompose on every counter increment (recomposition storm).
- * - **Optimized path** — composables that receive only the fields they render
- *   will be skipped entirely when just the counter changes.
+ * ViewModel for ProductCatalogScreen. Manages MVI intents and UI state,
+ * co-locating clickCounter and products to demonstrate recomposition optimization.
  */
 class ProductCatalogViewModel : ViewModel() {
 
