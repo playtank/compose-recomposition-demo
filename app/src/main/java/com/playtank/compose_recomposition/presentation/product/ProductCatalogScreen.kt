@@ -59,9 +59,9 @@ fun ProductCatalogScreen(
  * ├──────────────────────────────────┤
  * │  CounterSection  ← STICKY        │  never scrolls away
  * ├──────────────────────────────────┤
- * │  ⚠️ Before header                │
+ * │  Before header                │
  * │  Unoptimized item × 30           │  scrollable
- * │  ✅ After header                  │
+ * │  After header                  │
  * │  Optimized item × 30             │
  * └──────────────────────────────────┘
  */
@@ -106,7 +106,7 @@ internal fun ProductCatalogContent(
                 // ── Before section header ────────────────────────────────────
                 item(key = "header_before") {
                     SectionHeader(
-                        title = "⚠️ Before — Whole State Passed In",
+                        title = "Before — Whole State Passed In",
                         subtitle = "Anti-pattern: counter increment forces all items to recompose.",
                         headerColor = MaterialTheme.colorScheme.errorContainer,
                         textColor = MaterialTheme.colorScheme.onErrorContainer,
@@ -130,7 +130,7 @@ internal fun ProductCatalogContent(
                 // ── After section header ─────────────────────────────────────
                 item(key = "header_after") {
                     SectionHeader(
-                        title = "✅ After — Granular Fields Passed In",
+                        title = "After — Granular Fields Passed In",
                         subtitle = "Optimized: counter increment skips item recomposition entirely.",
                         headerColor = Color(0xFF1B5E20),
                         textColor = Color(0xFFE8F5E9),
