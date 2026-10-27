@@ -31,18 +31,18 @@ internal fun SectionHeader(
             .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
             .background(headerColor)
-            .padding(horizontal = 16.dp, vertical = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(2.dp),
+            .padding(horizontal = 16.dp, vertical = 14.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         Text(
             text = title,
-            style = MaterialTheme.typography.titleSmall,
+            style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             color = textColor,
         )
         Text(
             text = subtitle,
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.bodyMedium,
             color = textColor,
         )
     }

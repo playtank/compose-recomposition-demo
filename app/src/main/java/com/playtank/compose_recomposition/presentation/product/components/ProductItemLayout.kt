@@ -48,18 +48,18 @@ internal fun ProductItemLayout(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                    .padding(horizontal = 16.dp, vertical = 16.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = name,
-                        style = MaterialTheme.typography.titleSmall,
+                        style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )
                     Text(
                         text = "$%.2f".format(price),
-                        style = MaterialTheme.typography.bodySmall,
+                        style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
@@ -79,14 +79,14 @@ internal fun ProductItemLayout(
         // Recomposition badge (Red = unoptimized storm, Green = optimized skip)
         Text(
             text = "recomposed ×$badgeCount",
-            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+            style = MaterialTheme.typography.labelMedium.copy(fontSize = 14.sp),
             color = badgeTextColor,
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 4.dp, end = 4.dp)
-                .clip(RoundedCornerShape(4.dp))
+                .padding(top = 6.dp, end = 6.dp)
+                .clip(RoundedCornerShape(6.dp))
                 .background(badgeColor)
-                .padding(horizontal = 6.dp, vertical = 2.dp),
+                .padding(horizontal = 10.dp, vertical = 4.dp),
         )
     }
 }
