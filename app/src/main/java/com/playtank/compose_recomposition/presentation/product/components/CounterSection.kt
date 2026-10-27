@@ -19,15 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 /**
- * Sticky header card that holds the unrelated counter trigger.
- *
- * Tapping "Increment counter" changes [ProductCatalogUiState.clickCounter] which has
- * nothing to do with product data — that's the whole point. Composables that
- * receive the whole state object will recompose; composables that receive only
- * product-specific fields will be skipped.
- *
- * @param counter Current value of the unrelated click counter.
- * @param onIncrement Lambda invoked when the increment button is tapped.
+ * Unrelated state trigger section. Tapping the counter changes [counter],
+ * causing unoptimized components to recompose while optimized ones skip.
  */
 @Composable
 internal fun CounterSection(

@@ -16,13 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 /**
- * A coloured label bar that separates the "Before" (unoptimized) and
- * "After" (optimized) sections in the demo list.
- *
- * @param title   Bold heading line (e.g. "⚠️ Before — whole state passed in").
- * @param subtitle Explanatory subtitle shown below the title.
- * @param headerColor Background colour of the bar.
- * @param textColor   Foreground colour for both text elements.
+ * Colored section header separating unoptimized and optimized demo lists.
  */
 @Composable
 internal fun SectionHeader(

@@ -27,14 +27,7 @@ import androidx.compose.ui.unit.sp
 
 /**
  * Pure layout shell shared by [ProductItemUnoptimized] and [ProductItemOptimized].
- *
- * Renders a card with product name, price, and a favourite toggle. A small
- * recomposition-count badge is overlaid in the top-right corner; its colour
- * visually distinguishes which variant (red = unoptimized, green = optimized)
- * caused the recomposition.
- *
- * This composable is intentionally kept free of any state logic — all state
- * decisions happen one level up in the caller.
+ * Renders a product card with a recomposition-count badge in the top-right corner.
  */
 @Composable
 internal fun ProductItemLayout(
@@ -83,9 +76,7 @@ internal fun ProductItemLayout(
             }
         }
 
-        // ── Recomposition badge ───────────────────────────────────────────────
-        // Colour = red for unoptimized, green for optimized.
-        // Count increments every time this subtree recomposes.
+        // Recomposition badge (Red = unoptimized storm, Green = optimized skip)
         Text(
             text = "recomposed ×$badgeCount",
             style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
