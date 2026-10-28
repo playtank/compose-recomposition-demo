@@ -1,17 +1,7 @@
 package com.playtank.compose_recomposition.presentation.product
 
-// ─────────────────────────────────────────────────────────────────────────────
-// MVI Contract — ProductCatalogScreen
-// ─────────────────────────────────────────────────────────────────────────────
-
 /**
  * The single source of truth for the ProductCatalogScreen.
- *
- * **Intentional flaw (demo purpose)**
- * [products] and [clickCounter] are completely unrelated, yet they live in the
- * same state object. Any composable that receives the *whole* [ProductCatalogUiState]
- * will be forced to recompose every time [clickCounter] changes — even when none
- * of the product data changed. This is the "recomposition storm" anti-pattern.
  */
 data class ProductCatalogUiState(
     val products: List<DemoProduct> = emptyList(),
