@@ -1,8 +1,11 @@
 package com.playtank.compose_recomposition.presentation.product
 
+import androidx.compose.runtime.Immutable
+
 /**
  * The single source of truth for the ProductCatalogScreen.
  */
+@Immutable
 data class ProductCatalogUiState(
     val products: List<DemoProduct> = emptyList(),
     /**
