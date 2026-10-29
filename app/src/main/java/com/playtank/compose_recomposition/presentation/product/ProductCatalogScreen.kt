@@ -16,6 +16,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -84,12 +85,16 @@ internal fun ProductCatalogContent(
                     items = uiState.products,
                     key = { "unoptimized_${it.id}" },
                 ) { product ->
-                    ProductItem(
-                        uiState = uiState,
-                        productId = product.id,
-                        onToggleFavorite = {
+                    val onToggleFavorite = remember(product.id) {
+                        {
                             onIntent(ProductCatalogUiIntent.ToggleFavorite(product.id))
-                        },
+                        }
+                    }
+                    ProductItem(
+                        name = product.name,
+                        price = product.price,
+                        isFavorite = product.isFavorite,
+                        onToggleFavorite = onToggleFavorite
                     )
                 }
 

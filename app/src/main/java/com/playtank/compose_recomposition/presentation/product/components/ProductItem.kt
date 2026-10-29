@@ -11,17 +11,16 @@ import com.playtank.compose_recomposition.presentation.product.ProductCatalogUiS
  */
 @Composable
 internal fun ProductItem(
-    uiState: ProductCatalogUiState,
-    productId: Int,
+    name: String,
+    price: Double,
+    isFavorite: Boolean,
     onToggleFavorite: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val product = uiState.products.firstOrNull { it.id == productId } ?: return
-
     ProductItemLayout(
-        name = product.name,
-        price = product.price,
-        isFavorite = product.isFavorite,
+        name = name,
+        price = price,
+        isFavorite = isFavorite,
         onToggleFavorite = onToggleFavorite,
         modifier = modifier,
     )
